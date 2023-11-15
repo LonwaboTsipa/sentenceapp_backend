@@ -1,0 +1,6 @@
+@sentenceapp_backend_HostAddress = http://localhost:5148
+
+GET {{sentenceapp_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

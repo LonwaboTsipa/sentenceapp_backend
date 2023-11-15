@@ -1,0 +1,11 @@
+{
+  "nouns": [ "dog", "cat", "house", "car", "book" ],
+  "verbs": [ "run", "eat", "sleep", "study", "sing" ],
+  "adverbs": [ "quickly", "slowly", "loudly", "always", "never" ],
+  "adjectives": [ "happy", "big", "green", "smart", "beautiful" ],
+  "prepositions": [ "in", "on", "under", "behind", "between" ],
+  "conjunctions": [ "and", "but", "or", "because", "although" ],
+  "pronouns": [ "I", "you", "he", "she", "it" ],
+  "exclamations": [ "Wow!", "Oh no!", "Bravo!", "Yikes!", "Ouch!" ],
+  "determiners": [ "a", "an", "the", "some", "any" ]
+}

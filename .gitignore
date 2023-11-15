@@ -1,0 +1,6 @@
+*.user
+*.suo
+*.sln.docstates
+bin/
+obj/
+.vs/
