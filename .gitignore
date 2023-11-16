@@ -8,4 +8,3 @@ obj/
 *.db-shm
 *.db
 *.db-wal
-WordsDatabase.db
