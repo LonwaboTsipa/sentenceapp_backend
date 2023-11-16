@@ -4,3 +4,8 @@
 bin/
 obj/
 .vs/
+*.db
+*.db-shm
+*.db
+*.db-wal
+WordsDatabase.db

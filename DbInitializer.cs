@@ -7,7 +7,6 @@ namespace sentenceapp_backend
     public static class DbInitializer
     {
         public static void Initialize(ApplicationDbContext context) {
-         //   context.Database.EnsureCreated();
 
             if (!context.Database.CanConnect())
             {
@@ -18,9 +17,7 @@ namespace sentenceapp_backend
                 context.Database.Migrate();
             }
 
-            //string baseDirectory = AppContext.BaseDirectory;
             string baseDirectory = Directory.GetCurrentDirectory();
-           // string filePath = Path.Combine(baseDirectory, "\\mockdata\\words.json");
             string filePath = baseDirectory + "\\mockdata\\words.json";
 
             var jsonData = File.ReadAllText(filePath);
@@ -30,18 +27,12 @@ namespace sentenceapp_backend
             {
                 foreach (var tableName in wordData.Keys)
                 {
-                    //if (context.Set<WordBaseClass>().Any(e => e.TableName == tableName))
-                    //{
-                    //    continue; // Data for this table has been seeded
-                    //}
-
-                    // Add your initial data for the table
                     switch (tableName)
                     {
                         case "nouns":
                             if (context.Set<Noun>().Any(e => e.Value != null))
                             {
-                                continue; // Data for this table has been seeded
+                                continue; 
                             }
                             var nouns = wordData[tableName].Select(value => new Noun { Value = value });
                             context.Set<Noun>().AddRange(nouns);
@@ -50,7 +41,7 @@ namespace sentenceapp_backend
                         case "verbs":
                             if (context.Set<Verb>().Any(e => e.Value != null))
                             {
-                                continue; // Data for this table has been seeded
+                                continue;
                             }
                             var verbs = wordData[tableName].Select(value => new Verb { Value = value });
                             context.Set<Verb>().AddRange(verbs);
@@ -59,7 +50,7 @@ namespace sentenceapp_backend
                         case "adverbs":
                             if (context.Set<Adverb>().Any(e => e.Value != null))
                             {
-                                continue; // Data for this table has been seeded
+                                continue; 
                             }
                             var adverbs = wordData[tableName].Select(value => new Adverb { Value = value });
                             context.Set<Adverb>().AddRange(adverbs);
@@ -67,7 +58,7 @@ namespace sentenceapp_backend
                         case "adjectives":
                             if (context.Set<Adjective>().Any(e => e.Value != null))
                             {
-                                continue; // Data for this table has been seeded
+                                continue;
                             }
                             var adjectives = wordData[tableName].Select(value => new Adjective { Value = value });
                             context.Set<Adjective>().AddRange(adjectives);
@@ -75,7 +66,7 @@ namespace sentenceapp_backend
                         case "prepositions":
                             if (context.Set<Preposition>().Any(e => e.Value != null))
                             {
-                                continue; // Data for this table has been seeded
+                                continue;
                             }
                             var prepositions = wordData[tableName].Select(value => new Preposition { Value = value });
                             context.Set<Preposition>().AddRange(prepositions);
@@ -83,7 +74,7 @@ namespace sentenceapp_backend
                         case "conjunctions":
                             if (context.Set<Conjunction>().Any(e => e.Value != null))
                             {
-                                continue; // Data for this table has been seeded
+                                continue;
                             }
                             var conjunctions = wordData[tableName].Select(value => new Conjunction { Value = value });
                             context.Set<Conjunction>().AddRange(conjunctions);
@@ -91,15 +82,15 @@ namespace sentenceapp_backend
                         case "pronouns":
                             if (context.Set<Pronoun>().Any(e => e.Value != null))
                             {
-                                continue; // Data for this table has been seeded
+                                continue;
                             }
                             var pronouns = wordData[tableName].Select(value => new Pronoun { Value = value });
                             context.Set<Pronoun>().AddRange(pronouns);
                             break;
                         case "exclamations":
-                            if (context.Set<Adverb>().Any(e => e.Value != null))
+                            if (context.Set<Exclamation>().Any(e => e.Value != null))
                             {
-                                continue; // Data for this table has been seeded
+                                continue; 
                             }
                             var exclamations = wordData[tableName].Select(value => new Exclamation { Value = value });
                             context.Set<Exclamation>().AddRange(exclamations);
@@ -107,7 +98,7 @@ namespace sentenceapp_backend
                         case "determiners":
                             if (context.Set<Determiner>().Any(e => e.Value != null))
                             {
-                                continue; // Data for this table has been seeded
+                                continue;
                             }
                             var determiners = wordData[tableName].Select(value => new Determiner { Value = value });
                             context.Set<Determiner>().AddRange(determiners);
