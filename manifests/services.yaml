@@ -4,9 +4,9 @@ metadata:
   name: sentence-app-backend-service
 spec:
   selector:
-    app: nuxt
+    app: .net
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 3000
+      targetPort: 4000
   type: LoadBalancer
