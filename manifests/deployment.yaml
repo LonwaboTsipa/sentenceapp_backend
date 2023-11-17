@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentence-app-back-deployment
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: sentence-back-app
+  template:
+    metadata:
+      labels:
+        app: sentence-back-app
+    spec:
+      containers:
+        - name: sentence-back-app
+          image: us-central1-docker.pkg.dev/sentenceapp/sentencebackendapp/sentenceapp:latest
+          ports:
+            - containerPort: 8089
