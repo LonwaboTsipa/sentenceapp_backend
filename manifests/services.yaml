@@ -4,7 +4,7 @@ metadata:
   name: sentence-app-backend-service
 spec:
   selector:
-    app: .net
+    app: netcore8
   ports:
     - protocol: TCP
       port: 80
